@@ -125,7 +125,7 @@ sudoku.controller('PuzzleController', ['$scope', '$http', 'Board', function($sco
 }]);
 
 sudoku.factory('Board', ['$resource', function($resource) {
-  return $resource('/boards/', {}, {});
+  return $resource('/boards.json', {}, {});
 }]);
 
 sudoku.directive('ngBlur', function() {

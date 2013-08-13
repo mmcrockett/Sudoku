@@ -2,12 +2,12 @@ class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
   def index
-    Board.generate(4)
-    if (nil == session[:id])
+    begin
+      @user = User.find(session[:id])
+    rescue
+      reset_session
       @user = User.create
       session[:id] = @user.id
-    else
-      @user = User.find(session[:id])
     end
 
     @board = Board.find(@user.next())
@@ -51,7 +51,8 @@ class BoardsController < ApplicationController
   # POST /boards
   # POST /boards.json
   def create
-    Board.generate()
+    return
+    #Board.generate()
     #@board = Board.new(params[:board])
 
     respond_to do |format|
@@ -76,11 +77,11 @@ class BoardsController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @board, :notice => 'Board was successfully updated.' }
+        format.html { head :no_content }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render :json => @board.errors, :status => :unprocessable_entity }
+        format.json { render :json => @user.errors, :status => :unprocessable_entity }
       end
     end
   end

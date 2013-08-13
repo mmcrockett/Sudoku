@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130808180729) do
+ActiveRecord::Schema.define(:version => 20130813211615) do
 
   create_table "boards", :force => true do |t|
     t.integer  "size"
@@ -20,10 +20,29 @@ ActiveRecord::Schema.define(:version => 20130808180729) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "randomizers", :force => true do |t|
+    t.integer  "board_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "randomizers", ["board_id"], :name => "index_randomizers_on_board_id"
+
+  create_table "settings", :force => true do |t|
+    t.integer  "size",              :null => false
+    t.integer  "min_randomizer_id", :null => false
+    t.integer  "max_randomizer_id", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
   create_table "users", :force => true do |t|
+    t.integer  "difficulty",  :default => 1
+    t.integer  "size",        :default => 4
+    t.string   "indices"
     t.string   "preferences"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
 end
