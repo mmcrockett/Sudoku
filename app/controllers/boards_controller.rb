@@ -60,7 +60,7 @@ class BoardsController < ApplicationController
         #format.html { redirect_to @board, :notice => 'Board was successfully created.' }
         #format.json { render :json => @board, :status => :created, location: @board }
       #else
-        format.html { render action: "new" }
+        format.html { render :action => "new" }
         format.json { render :json => @board.errors, :status => :unprocessable_entity }
       #end
     end
@@ -80,7 +80,7 @@ class BoardsController < ApplicationController
         format.html { head :no_content }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render :action => "edit" }
         format.json { render :json => @user.errors, :status => :unprocessable_entity }
       end
     end
