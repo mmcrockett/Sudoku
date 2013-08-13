@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  preferences: MyString
+  board_order: MyString
+
+two:
+  preferences: MyString
+  board_order: MyString

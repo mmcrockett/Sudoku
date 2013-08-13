@@ -1,0 +1,26 @@
+// Place all the styles related to the boards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.top-row {
+  border-top:thick solid #000000;
+}
+.bottom-row {
+  border-top:thin solid #000000;
+  border-bottom:thick solid #000000;
+}
+.right-block {
+  border-right:thick solid #000000;
+}
+.standard-block {
+  border-right:thin solid #000000;
+}
+.left-block {
+  border-left:thick solid #000000;
+}
+input.inline {
+  display:inline;
+  margin:0;
+  padding:0;
+  border:0;
+  width:57px;
+}

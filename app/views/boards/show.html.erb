@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Size:</b>
+  <%= @board.size %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @board.data %>
+</p>
+
+
+<%= link_to 'Edit', edit_board_path(@board) %> |
+<%= link_to 'Back', boards_path %>
