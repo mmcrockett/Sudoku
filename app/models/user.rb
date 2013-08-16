@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     if ((false == self.indices.include?(self.ssize)) || (false == self.indices[self.ssize].include?('index')))
       self.indices[self.ssize] ||= {}
       setting = Settings.where(:size => self.size).first
-      self.indices[self.ssize]['index'] = setting.min_randomizer_id + Random.rand(setting.max_randomizer_id - setting.min_randomizer_id + 1)
+      self.indices[self.ssize]['index'] = setting.min_randomizer_id + rand(setting.max_randomizer_id - setting.min_randomizer_id + 1)
     end
   end
 
