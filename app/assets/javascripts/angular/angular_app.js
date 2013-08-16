@@ -111,9 +111,12 @@ sudoku.controller('PuzzleController', ['$scope', '$http', 'Board', function($sco
     $scope.answerValid[i] = 0;
   };
   $scope.next = function() {
-    $scope.board.$get();
-    $scope.display_board = new $scope.DisplayBoard($scope.board.size);
-    $scope.answerValid = [];
+    $scope.board.$get(function(data) {
+      $scope.display_board = new $scope.DisplayBoard($scope.board.size);
+      $scope.answerValid = [];
+    }, function(err) {
+      console.log(err);
+    });
   };
   $scope.processEnter = function(e) {
     if (13 == e.keyCode) {
