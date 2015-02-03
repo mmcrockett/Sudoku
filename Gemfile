@@ -36,6 +36,7 @@ gem 'therubyracer'
 
 # Deploy with Capistrano
 gem 'capistrano', '~> 2.15'
+gem 'rvm-capistrano'
 
 # To use debugger
 # gem 'debugger'

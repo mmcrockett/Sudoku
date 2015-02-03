@@ -1,4 +1,5 @@
 require 'bundler/capistrano'
+require 'rvm/capistrano'
 
 #set :user, "mikesudoku"
 set :user, "washingrvingrails"
