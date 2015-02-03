@@ -1,8 +1,9 @@
 require 'bundler/capistrano'
 
-set :user, "mikesudoku"
+#set :user, "mikesudoku"
+set :user, "washingrvingrails"
 set :domain, "sudoku.mmcrockett.com"
-set :applicationdir, "/home/mikesudoku/sudoku.mmcrockett.com"
+set :applicationdir, "/home/washingrvingrails/sudoku.mmcrockett.com"
 set :application, "sudoku"
 set :rails_env, :production
 set :use_sudo, false
@@ -10,9 +11,6 @@ set :use_sudo, false
 set :scm, :git
 set :branch, "master"
 set :repository,  "git@github.com:mmcrockett/Sudoku.git"
-set :default_environment, {
-  'PATH' => "/usr/lib/ruby/gems/1.8/bin:$PATH"
-}
 
 # roles (servers)
 role :web, domain
